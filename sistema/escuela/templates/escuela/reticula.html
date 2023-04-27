@@ -71,37 +71,585 @@
     </table>
 </div>
 
-<div class="table-responsive" style="font-family:Century Gothic; text-transform: uppercase;">
-    <table class="table table-bordered table-striped">
-        <thead>
+<div class="table-responsive" style="font-family:Century Gothic; text-transform: uppercase; text-align: center;">
+    <table class="table table-sm table-bordered table-striped ">
+        <thead style="background-color: #762A44; color: white;">
             <tr>
-              <th>Asignatura</th>
-              <th>Créditos</th>
-              <th>Semestre 1</th>
-              <th>Semestre 2</th>
-              <th>Semestre 3</th>
-              <th>Semestre 4</th>
-              <th>Semestre 5</th>
-              <th>Semestre 6</th>
-              <th>Semestre 7</th>
-              <th>Semestre 8</th>
-              <th>Semestre 9</th>
+                <th> <strong>Semestre 1</strong></th>
+                <th> <strong>Semestre 2</strong></th>
+                <th> <strong>Semestre 3</strong></th>
+                <th> <strong>Semestre 4</strong></th>
+                <th> <strong>Semestre 5</strong></th>
+                <th> <strong>Semestre 6</strong></th>
+                <th> <strong>Semestre 7</strong></th>
+                <th> <strong>Semestre 8</strong></th>
+                <th> <strong>Semestre 9</strong></th>
             </tr>
-          </thead>
-          <tbody>
-            {% for materia in materias %}
+        </thead>
+
+        <tbody style="font-size: 8pt;">
+            {#Esta es la primera fila de la tabla#}
             <tr>
-              <td>{{ materia.asignatura }}</td>
-              <td>{{ materia.creditos }}</td>
-              {% for i in '123456789' %}
-              <td>{% if materia.semestre|roman_to_int == i %}{{ materia.asignatura }}{% endif %}</td>
-              {% endfor %}
+
+                {% for sem in mat1 %}
+                        <td>{{sem.asignatura}}
+                            <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                            </p>
+                        </td>
+                {% endfor%}
+                
+                {% for sem in mat7 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat13 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat19 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat25 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat31 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat37 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat43 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat49 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
             </tr>
-            {% endfor %}
-          </tbody>
+            {#aqui comienza la segunda fila de la tabla#}
+            <tr>
+                {% for sem in mat2 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat8 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat14 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat20 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat26 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat32 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat38 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat44 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat50 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                
+            </tr>
+            {#aqui comienza la tercera fila de la tabla#}
+            <tr>
+                {% for sem in mat3 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat9 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat15 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat21 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat27 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat33 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}{% for sem in mat39 %}
+                
+                <td>{{sem.asignatura}}
+
+                    <p>{{sem.clave1}}
+                        <br>
+                        {{sem.clave2}}
+                    </p>
+                </td>
+            {% endfor%}
+            {% for sem in mat45 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat51 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+            </tr>
+            {#aqui comienza la cuarta fila de la tabla#}
+            <tr>
+                {% for sem in mat4 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat10 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat16 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat22 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat28 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat34 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat40 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat46 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat52 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+            </tr>
+            {#aqui comienza la quinta fila de la tabla#}
+            <tr>
+                {% for sem in mat5 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat11 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat17 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat23 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat29 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat35 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat41 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat47 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat53 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                
+            </tr>
+            {#aqui comienza la sexta fila de la tabla#}
+            <tr>
+                {% for sem in mat6 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat12 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat18 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat24 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat30 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat36 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat42 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat48 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+                {% for sem in mat54 %}
+                
+                    <td>{{sem.asignatura}}
+
+                        <p>{{sem.clave1}}
+                            <br>
+                            {{sem.clave2}}
+                        </p>
+                    </td>
+                {% endfor%}
+            </tr>
+        </tbody>
     </table>
 </div>
-
 <hr>
 <br>
 
