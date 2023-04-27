@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% csrf_token %}
+{% block contenido %}
+<div class="card" style="font-family:Century Gothic; text-transform: uppercase;">
+    <div class="card-header"
+        style=" width: 100%; height: 10%;background-color: #1B396A; color: white; text-align: center; font-size: 18pt;">
+        Reticula
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <thead>
+                <tr>
+                    <th class="w-16 p-3">No. Control</th>
+                    <th class="w-50 p-3">Nombre del alumno</th>
+                    <th class="w-9 p-3">Semestre</th>
+                    <th class="w-15 p-3">Periodo escolar</th>
+                    <th class="w-10 p-3">Prom. Acumulado</th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr>
+                <td>{{alumnos.ncontrol}}</td>
+                <td>{{alumno.nombre}}
+                    {{alumno.apellidopaterno}} {{alumno.apellidomaterno}} </td>
+                <td>12</td>
+                <td>ENE-JUN/2023</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+        </thead>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <thead>
+                <tr>
+                    <th style="width: 540px;">Carrera</th>
+                    <th style="width: 540px;">Especialidad</th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr>
+                <td>Ingenieria en Sistemas Computacionales</td>
+                <td>Tecnologias de informacion y la comunicacion</td>
+            </tr>
+        </tbody>
+        </thead>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width: 360px;">Créditos Acumulados</th>
+                <th style="width: 360px;">Créditos Disponibles</th>
+                <th style="width: 360px;">Materias Seleccionadas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>xxxxxxxxxxxxxxxxxx</td>
+                <td>xxxxxxxxxxxxxxxxxx</td>
+                <td>xxxxxxxxxxxxxxxxxx</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="table-responsive" style="font-family:Century Gothic; text-transform: uppercase;">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th>Asignatura</th>
+              <th>Créditos</th>
+              <th>Semestre 1</th>
+              <th>Semestre 2</th>
+              <th>Semestre 3</th>
+              <th>Semestre 4</th>
+              <th>Semestre 5</th>
+              <th>Semestre 6</th>
+              <th>Semestre 7</th>
+              <th>Semestre 8</th>
+              <th>Semestre 9</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for materia in materias %}
+            <tr>
+              <td>{{ materia.asignatura }}</td>
+              <td>{{ materia.creditos }}</td>
+              {% for i in '123456789' %}
+              <td>{% if materia.semestre|roman_to_int == i %}{{ materia.asignatura }}{% endif %}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+
+<hr>
+<br>
+
+
+<div class="table-responsive">
+    <h4>Descripción de codigos de color</h4>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <td style="color:black; background: #A0D79F;">
+                    <p>
+                        Acreditada
+                    </p>
+                </td>
+                <td style="color:white; background: #603060;">
+                    <p>
+                        Cursando en Primera
+                    </p>
+                </td>
+                <td style="color:white; background: #000000;">
+
+                    <p>
+                        Primera Cursando en Repeticion
+                    </p>
+                </td>
+                <td style="color:black; background: #FFFF66;">
+
+                    <p>
+                        Cursada Sin Acreditar Prioridad para seleccionar
+                    </p>
+                </td>
+                <td style="color:black; background: #FF9900;">
+
+                    <p>
+                        A Curso Especial Prioridad para seleccionar
+                    </p>
+                </td>
+                <td style="color:white; background: #FF0000;">
+
+                    <p>
+                        Curso o Ex. Esp. Reprobado
+                    </p>
+                </td>
+                <td style="color:white; background: #0080C0;">
+                    <p>
+                        Materia posible a seleccionar si requisitos OK
+                    </p>
+                </td>
+                <td style="color:black; background: #CCCCCC;">
+
+                    <p>
+                        Materia no permitida hasta avance
+                    </p>
+                </td>
+                <td style="color:white; background: #996600;">
+
+                    <p>
+                        Cursando en Especial: Seleccionada
+                    </p>
+                </td>
+
+            </tr>
+        </thead>
+    </table>
+</div>
+{% endblock %}

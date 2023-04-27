@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de Alumnos {% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card overflow" style="margin-bottom: 10px; margin-top: -0px;">
+                <div class="card-header">
+                </div>
+                <div class="card-body overflow" style="font-family: Century Gothic;">
+                    <h4 class="card-title" style="text-align: center;"></h4><br>
+                    {% for alumno in alumnos %}
+                    <div class="col" style=" margin:10%; margin-top:0px; padding-top:0px; color: #762A44;">
+                        <img class="rounded-circle" src="{{alumno.imagen.url}}" width="150" height="130">
+                        </img>
+                    </div>
+                    <div class="col" style=" margin-left:25%; margin-top:-20%; color: #762A44;">
+                        <h3 class="fw-bold" style="margin: auto;">{{alumno.ncontrol}}</h3>
+                        <h3 class="fw-bold" style="margin: auto; margin-top: -5px;">{{alumno.nombre}}
+                            {{alumno.apellidopaterno}} {{alumno.apellidomaterno}} </h3>
+                        <h5 style="margin: auto; margin-top: -3px;">{{alumno.carrera}}</h5>
+                        <h6>{{alumno.modcarrera}}</h6>
+                    </div>
+
+                    <div class=" col fs-6 " style=" margin-left: 25%;">
+                        <tr>
+                            <th scope="col">PERIODO DE INGRESO </th> <br>
+                            <th scope="col">ESCUELA PROCEDENCIA</th><br>
+                            <th scope="col">DIRECCION ESCUELA</th><br>
+                            <th scope="col">SEXO</th><br>
+                            <th scope="col">FECHA DE NACIMIENTO</th><br>
+                            <th scope="col">CURP</th><br>
+                            <th scope="col">TELEFONO</th> <br>
+                            <th scope="col">CORREO ELECTRONICO</th><br>
+                            <th scope="col">DIRECCION</th><br>
+                            <th scope="col">COLONIA</th><br>
+                            <th scope="col">CIDUDAD O LOCALIDAD</th><br>
+                            <th scope="col">ENTIDAD FEDERATIVA</th><br>
+                            <th scope="col">LUGAR DE NACIMIENTO</th><br>
+                            <th scope="col">CODIGO POSTAL</th><br>
+                            <th scope="col">ESTADO CIVIL</th><br>
+                        </tr>
+
+                    </div>
+                    <div class=" col fs-6 fw-bold " style=" margin-left: 50%; margin-top: -360px; ">
+                        <tr>
+                            <th scope="col">{{alumno.periododeingreso}}</th><br>
+                            <th scope="col">{{alumno.escuelasdeprocedencia}}"</th><br>
+                            <th scope="col">{{alumno.direccion}}</th><br>
+                            <th scope="col"> {{alumno.sexo}}</th><br>
+                            <th scope="col">{{alumno.fechanacimiento}}</th><br>
+                            <th scope="col"> {{alumno.curp}}</th><br>
+                            <th scope="col"> {{alumno.telefono}}</th><br>
+                            <th scope="col"> {{alumno.correoelectronico}}</th><br>
+                            <th scope="col">{{alumno.domicilio}}</th><br>
+                            <th scope="col">{{alumno.colonia}}</th><br>
+                            <th scope="col">{{alumno.ciudadolocalidad}}</th><br>
+                            <th scope="col">{{alumno.entidadfederativa}}</th><br>
+                            <th scope="col">{{alumno.lugarnacimiento}}</th><br>
+                            <th scope="col"> {{alumno.codigopostal}}</th><br>
+                            <th scope="col">{{alumno.estadocivil}}</th><br>
+                        </tr><br>
+                    </div>
+                    <div class="col">
+                        <a name="" id="" class="btn col-2" href="{% url 'editarestudiantes' alumno.id %}"
+                            role="button"
+                            style="background-color: #762A44; color: white; margin-left: 75%; margin-top: -80%;">Editar</a>
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminarestudiantes' alumno.id %}"
+                            role="button"
+                            style="background-color: #762A44; color: white; margin-left: 75%; margin-top: -70%;">Eliminar</a>
+                    </div>
+                </div>
+                {% endfor%}
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

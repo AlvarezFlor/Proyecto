@@ -1,0 +1,194 @@
+<form id="formularioalumno" enctype="multipart/form-data" method="post">
+  <div>
+      {% csrf_token %}
+     
+      {% if error %}
+      <div class="col-12 help-text">{{error}}</div>
+      {%else%}
+      <div class=" col-12" style="margin-left: 0px; margin-bottom: 2px; text-transform: uppercase; text-align: center;">
+          <label for="" class="form-label col-3" style="background-color: #762A44; color: white;">Apellido
+              Paterno</label>
+          <label for="" class="form-label col-3" style="background-color: #762A44; color: white;"> Apellido
+              Materno</label>
+          <label for="" class="form-label col-3" style="background-color: #762A44; color: white;"> Nombre</label>
+          <label for="" class="form-label col-2" style="background-color: #762A44; color: white;"> No. de
+              Control</label>
+      </div>
+      <div class="container text-center">
+          <div class="row row-cols-4" style="margin-left: 35px; margin-bottom: 10px;">
+              <div class="col-3">            
+                  {{alumnos.apellidopaterno}}
+              </div>
+              <div class="col-3" style="margin-left: 1%;">
+                  {{alumnos.apellidomaterno}}
+              </div>
+              <div class="col-3" style="margin-left: 2%;">
+                  {{alumnos.nombre}}
+              </div>
+              <div class="col-2" style="margin-left: 1.5%;">
+                  {{alumnos.ncontrol}}
+              </div>
+          </div>
+      </div>
+      <div class="col-12" style="margin-left: 0px; text-transform: uppercase; text-align: center;">
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Lugar de nacimiento</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Fecha de nacimiento</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Curp</label>
+          <label class="form-label col-2" style="background-color: #762A44; color: white;">Sexo</label>
+
+      </div>
+      <div class="container text-center">
+          <div class="row row-cols-4" style="margin-left: 35px; margin-bottom: 10px;">
+
+              <div class="col-3">
+                  {{alumnos.lugarnacimiento}}
+              </div>
+              <div class="col-3" style="margin-left: 1.2%;">
+                  {{alumnos.fechanacimiento}}
+              </div>
+              <div class="col-3" style="margin-left: 2%;">
+                  {{alumnos.curp}}
+              </div>
+              <div class="col-2" style="margin-left: 1.2%;">
+                  {{alumnos.sexo}}
+                <datalist id="sexo">
+                    {% for sexo in sexos %}
+                    <option id="{{sexo.id}}" value="{{sexo.sex}}"></option>
+                    {% endfor %}
+                </datalist>
+              </div>
+          </div>
+      </div>
+      <div class="col-12" style="margin-left: 0px; text-transform: uppercase; text-align: center; ">
+          <label class="form-label col-2" style="background-color: #762A44; color: white;">Estado civil</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Fotografía</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Domicilio</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Colonia</label>
+      </div>
+      <div class="container text-center">
+          <div class="row row-cols-4" style="margin-left: -17px; margin-bottom: 10px;">
+
+              <div class="col-2" style="margin-left: 4%;">
+                  {{alumnos.estadocivil}}
+                  <datalist id="estadocivil">
+                    {% for estado in estadoc %}
+                    <option id="{estado.id}" value="{{estado.estcivil}}"></option>
+                    {% endfor %}
+                </datalist>
+              </div>
+              <div class="col-3 " style="margin-left: 0%;">
+                  {{alumnos.imagen}}
+              </div>
+              <div class="col-3" style="margin-left: 0.6%;">
+                  {{alumnos.domicilio}}
+              </div>
+              <div class="col-3" style="margin-left: 0.6%;">
+                  {{alumnos.colonia}}
+              </div>
+          </div>
+      </div>
+
+      <div class="col-12" style="margin-left: 0; text-transform: uppercase; text-align: center;">
+          <label class="form-label col-2" style="background-color: #762A44; color: white;">Codigo Postal</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Ciudad o localidad</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Entidad Federativa</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Telefono</label>
+      </div>
+
+      <div class="container text-center">
+          <div class="row row-cols-4" style="margin-left: -17px; margin-bottom: 10px;">
+
+              <div class="col-2" style="margin-left: 4%;">
+                  {{alumnos.codigopostal}}
+              </div>
+              <div class="col-3">
+                  {{alumnos.ciudadolocalidad}}
+              </div>
+              <div class="col-3" style="margin-left: 0.6%;">
+                  {{alumnos.entidadfederativa}}
+                  <datalist id="entidadfederativa">
+                      {% for entidad in entidadfederativas %}
+                      <option id="{entidad.id}" value="{{entidad.entfederativa}}"></option>
+                      {% endfor %}
+                  </datalist>
+              </div>
+              <div class="col">
+                  {{alumnos.telefono}}
+              </div>
+          </div>
+      </div>
+      <div class="col-12" style="margin-left: 0; text-transform: uppercase; text-align: center;">
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Correo Electronico</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Escuela de
+              procedencia</label>
+          <label class="form-label col-2" style="background-color: #762A44; color: white;">Modalidad años</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Direccion</label>
+      </div>
+      <div class="container text-center">
+          <div class="row row-cols-4" style="margin-left: -17px; margin-bottom: 10px;">
+
+              <div class="col" style="margin-left: 4%;"> 
+                  {{alumnos.correoelectronico}}
+              </div>
+              <div class="col">
+                  {{alumnos.escuelasdeprocedencia}}
+                  <datalist id="escuelas">
+                      {% for escuela in escuelas %}
+                      <option id="{escuela.id}" value="{{escuela.escueladeprocedencia}}"></option>
+                      {% endfor %}
+                  </datalist>
+              </div>
+              <div class="col-2">
+                  {{alumnos.modalidad}}
+              </div>
+              <div class="col">
+                  {{alumnos.direccion}}
+              </div>
+          </div>
+      </div>
+      <div class="col-12" style="margin-left: 0%; text-transform: uppercase; text-align: center;">
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Carrera</label>
+          <label class="form-label col-4" style="background-color: #762A44; color: white;">Modalidad de
+              carrera</label>
+          <label class="form-label col-3" style="background-color: #762A44; color: white;">Periodo de ingreso</label>
+      </div>
+      <div class="container text-center">
+          <div class="row row-cols-4" style="margin-left: -17px; margin-bottom: 10px;">
+
+              <div class="col-3" style="margin-left:8%;">
+                  {{alumnos.carrera}}
+                  <datalist id="carrera">
+                      {% for carrera in carreras %}
+                      <option id="{carrera.id}" value="{{carrera.nombrecarrera}}"></option>
+                      {% endfor %}
+                  </datalist>
+              </div>
+              <div class="col-4" style="margin-left:0%;">
+                  {{alumnos.modcarrera}}
+                  <datalist id="modcarrera">
+                      {% for mod in modc %}
+                      <option id="{mod.id}" value="{{mod.modacarrera}}"></option>
+                      {% endfor %}
+                  </datalist>
+              </div>
+              <div class="col-3" style="margin-left:1%;">
+                  {{alumnos.periododeingreso}}
+                  <datalist id="periodoingreso">
+                      {% for periodo in periodos %}
+                      <option id="{periodo.id}" value="{{periodo.periodo}}"></option>
+                      {% endfor %}
+                  </datalist>
+              </div>
+          </div>
+      </div>
+      
+      {%endif%}
+     
+      <input name="" id="" class="btn btn-success" type="submit" value="Enviar informacion"
+          style="background-color: #762A44; color: white; margin-left: 400px; margin-top: 10px; text-transform: uppercase;">
+      <a name="" id="" class="btn btn-primary"
+          style="background-color: #762A44; color: white; margin-top: 10px; text-transform: uppercase;"
+          href="{% url 'alumnos'%}" role="button">Cancelar</a>
+  </div>
+
+</form>
